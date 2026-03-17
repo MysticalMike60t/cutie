@@ -1,2 +1,6 @@
 *.out
 /cutie
+dist/**/*
+out/**/*
+release/**/*
+*.log
