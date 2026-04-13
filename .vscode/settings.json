@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "README.md": "html",
+  },
+  "html.autoClosingTags": false,
+  "[html]": {
+    "editor.autoIndent": "none",
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+  },
+}

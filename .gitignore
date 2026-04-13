@@ -4,3 +4,7 @@ dist/**/*
 out/**/*
 release/**/*
 *.log
+build/
+target/
+
+!.bin/

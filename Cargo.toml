@@ -1,0 +1,96 @@
+[package]
+name = "cutie"
+description = "I love colors, so here is a nice stdout+stderr printing library."
+authors = ["Caden Finkelstein <me@cadenf.com>"]
+license-file = "LICENSE"
+version = "0.0.0"
+edition = "2024"
+rust-version = "1.94.1"
+# incompatible-rust-versions = "fallback"
+repository = "https://github.com/MysticalMike60t/cutie"
+homepage = "https://github.com/MysticalMike60t/cutie"
+documentation = "https://github.com/MysticalMike60t/cutie"
+readme = "README.md"
+keywords = ["cli", "tui", "debug", "log"]
+categories = ["command-line-utilities"]
+build = "build.rs"
+# link = ""
+exclude = [".*"]
+include = ["LICENSE"]
+publish = false
+autolib = true
+autobins = true
+autoexamples = true
+autotests = true
+autobenches = true
+
+[lib]
+name = "uwulib"
+path = "src/lib.rs"
+test = true
+doctest = true
+# bencg = true
+doc = true
+proc-macro = false
+harness = true
+crate-type = ["lib"]
+required-features = []
+
+[badges]
+maintenance = { status = "as-is" }
+
+[dependencies]
+clap = { version = "4.6.0", features = ["derive"] }
+# console = ">=0.16.3"
+# dialoguer = ">=0.12.0"
+# indicatif = ">=0.18.4"
+
+[profile.dev]
+opt-level = 0
+debug = "full"
+split-debuginfo = '...'
+strip = "symbols"
+debug-assertions = true
+overflow-checks = false
+lto = "off"
+panic = "unwind"
+incremental = true
+codegen-units = 256
+rpath = false
+
+[profile.release]
+opt-level = 3
+debug = "none"
+split-debuginfo = '...'
+strip = "none"
+debug-assertions = false
+overflow-checks = false
+lto = "off"
+panic = 'unwind'
+incremental = false
+codegen-units = 16
+rpath = false
+
+[profile.release-optimizations]
+inherits = "release"
+opt-level = 3
+debug = "none"
+split-debuginfo = '...'
+strip = "none"
+debug-assertions = false
+overflow-checks = false
+lto = "fat"
+panic = "unwind"
+incremental = false
+codegen-units = 16
+rpath = false
+
+[profile.dev.build-override]
+opt-level = 0
+codegen-units = 256
+debug = "full"
+
+[profile.release.build-override]
+opt-level = 3
+codegen-units = 256
+debug = "none"
