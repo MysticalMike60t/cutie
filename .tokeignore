@@ -1,0 +1,10 @@
+target/
+.vscode/
+.zed/
+.git./
+.gitignore
+.editorconfig
+Cargo.toml
+Cargo.lock
+LICENSE
+README.md
