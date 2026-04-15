@@ -3,7 +3,9 @@ use clap::Parser;
 #[derive(Parser)]
 #[command(version, name = "cutie", about = "Prints cute stuff :3", long_about = None)]
 pub struct Args {
-    #[arg(short, long)]
+    #[arg(short = 't', long)]
+    pub test_color: bool,
+    #[arg(short = 'p', long)]
     pub prefix_type: String,
     #[arg(trailing_var_arg(true))]
     pub text: Vec<String>,

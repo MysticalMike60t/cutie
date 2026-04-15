@@ -8,8 +8,8 @@ pub struct Prefix<'color_code, 'display_text> {
 impl<'rgb, 'display_text> Prefix<'rgb, 'display_text> {
     pub fn new(display_text: &'display_text str) -> Self {
         Self {
-            color_code: Self::return_color_code(display_text),
-            display_text: Self::return_type(display_text),
+            color_code: Self::process_inputted_color_code(display_text),
+            display_text: Self::process_inputted_type(display_text),
         }
     }
     pub fn insert<'output>(self) -> &'output str {
@@ -20,19 +20,22 @@ impl<'rgb, 'display_text> Prefix<'rgb, 'display_text> {
         );
         return (ansi.clone()).leak();
     }
-    pub fn return_type<'output>(display_text: &'display_text str) -> &'output str {
-        if display_text.to_lowercase().as_str().contains("success") {
-            return "SUCCESS";
-        } else {
-            return "NONE";
+    pub fn process_inputted_type<'output>(display_text: &'display_text str) -> &'output str {
+        match display_text.to_lowercase().as_str() {
+            "debug"   => return "DEBUG  ",
+            "success" => return "SUCCESS",
+            "warning" => return "WARNING",
+            "error"   => return "ERROR  ",
+            "info"    => return "INFO   ",
+            "output"  => return "OUTPUT ",
+            &_ => return "None"
         }
     }
-    pub fn return_color_code<'output>(display_text: &'display_text str) -> ColorCode<'output> {
+    pub fn process_inputted_color_code<'output>(display_text: &'display_text str) -> ColorCode<'output> {
         let i: &u8;
-        if display_text.to_lowercase().as_str().contains("success") {
-            i = &92;
-        } else {
-            i = &90;
+        match display_text.to_lowercase().as_str() {
+            "success" => i = &92,
+            &_        => i = &90
         }
         let rgb: ColorCode<'output> = ColorCode::new(&i);
         return rgb;

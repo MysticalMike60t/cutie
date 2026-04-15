@@ -1,6 +1,10 @@
 cfg_if::cfg_if! {
-    if #[cfg(feature = "ansi256")] {
+    if #[cfg(feature = "ansi24bit")] {
+        use uwulib::prefixes::ansi24bit::Prefix;
+    } else if #[cfg(feature = "ansi256")] {
         use uwulib::prefixes::ansi256::Prefix;
+    } else if #[cfg(feature = "ansi16")] {
+        use uwulib::prefixes::ansi16::Prefix;
     } else {
         use uwulib::prefixes::ansi16::Prefix;
     }
