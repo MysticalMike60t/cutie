@@ -7,3 +7,15 @@
 Pretty output via <b>ANSI</b>.
 </p>
 </div>
+
+<div align="center">
+<p align="center">
+<span>
+<pre>All binaries can be found in </pre>
+<a href="https://github.com/MysticalMike60t/cutie/releases">
+releases
+</a>
+<pre>.</pre>
+</span>
+</p>
+</div>
