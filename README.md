@@ -8,6 +8,9 @@ Pretty output via <b>ANSI</b>.
 </p>
 </div>
 
+<br />
+<hr />
+
 <footer align="center">
 <p align="center">
 <span>
