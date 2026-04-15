@@ -8,7 +8,7 @@ Pretty output via <b>ANSI</b>.
 </p>
 </div>
 
-<div align="center">
+<footer align="center">
 <p align="center">
 <span>
 <span>All binaries can be found in </span>
@@ -18,4 +18,4 @@ releases
 <span>.</span>
 </span>
 </p>
-</div>
+</footer>
