@@ -2,8 +2,6 @@ use clap::Parser;
 use std::io::Error;
 use std::process::ExitCode;
 
-use crate::print::print;
-
 pub mod args;
 pub mod print;
 
@@ -23,6 +21,6 @@ fn main() -> Result<ExitCode, Error> {
     //     prefix_type,
     //     args.insert_text()
     // );
-    print(args.prefix_type.leak(), args.text.concat().leak());
+    print::print(args.prefix_type.leak(), args.text.concat().leak());
     std::process::exit(1);
 }

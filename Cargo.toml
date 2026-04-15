@@ -40,6 +40,7 @@ required-features = []
 maintenance = { status = "as-is" }
 
 [dependencies]
+cfg-if = "1.0.4"
 clap = { version = "4.6.0", features = ["derive"] }
 # console = ">=0.16.3"
 # dialoguer = ">=0.12.0"
@@ -94,3 +95,8 @@ debug = "full"
 opt-level = 3
 codegen-units = 256
 debug = "none"
+
+[features]
+default = ["ansi256"]
+ansi16 = []
+ansi256 = []
