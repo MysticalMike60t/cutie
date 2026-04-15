@@ -11,11 +11,11 @@ Pretty output via <b>ANSI</b>.
 <div align="center">
 <p align="center">
 <span>
-<pre>All binaries can be found in </pre>
+<span>All binaries can be found in </span>
 <a href="https://github.com/MysticalMike60t/cutie/releases">
 releases
 </a>
-<pre>.</pre>
+<span>.</span>
 </span>
 </p>
 </div>
